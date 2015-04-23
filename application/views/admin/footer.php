@@ -32,6 +32,7 @@
             <script type="text/javascript" src="<?php echo base_url();?>assets/js/colorpicker.js"></script>
             <script type="text/javascript" src="<?php echo base_url();?>assets/js/chosen.jquery.js"></script>
             <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
+           <!-- <script type="text/javascript" src="<?php echo base_url();?>assets/js/contracts/newContract.js"></script>-->
             <script type="text/javascript" src="<?php echo base_url();?>assets/js/custom.js"></script>
         
 </body>

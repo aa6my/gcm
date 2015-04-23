@@ -16,7 +16,9 @@ class Clients extends CI_Controller {
 
 	public function add_client(){
 
-		$this->load->view('admin/a_client_add');
+		$table = "contracts";
+		$data['contracts'] = $this->segi_model->get_all_rows($table);
+		$this->load->view('admin/a_client_add', $data);
 	}
 
 	

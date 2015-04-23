@@ -4,7 +4,9 @@
                              array('text' => $this->session->flashdata('login_match'), 'alert_type' => 'danger'),
                              array('text' => $this->session->flashdata('login_inactive'), 'alert_type' => 'danger'),
                              array('text' => $this->session->flashdata('login_account'), 'alert_type' => 'danger'),
-                             array('text' => $this->session->flashdata('insert'), 'alert_type' => 'success')
+                             array('text' => $this->session->flashdata('insert'), 'alert_type' => 'success'),
+                             array('text' => $this->session->flashdata('delete'), 'alert_type' => 'success'),
+                             array('text' => $this->session->flashdata('update'), 'alert_type' => 'success')
 
                              
                             );

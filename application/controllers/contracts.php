@@ -50,6 +50,123 @@ class Contracts extends CI_Controller {
 		$this->load->view('admin/a_contract_list_inactive', $data);
 	}
 
+	public function view_contract(){
+		$contractId = $this->uri->segment(3);
+		$table = "contracts";
+		$where = array(
+			'contractId' => $contractId
+		);
+		$data['contracts'] = $this->segi_model->get_all_rows($table, $where);
+
+		$this->load->view('admin/a_view_contract', $data);
+
+		if($this->input->post('submit'))
+		{
+			$formData = $this->input->post();
+			if($formData['contractType'] == "1")
+            {
+                    $msPeriod = $formData['msPeriod'];
+                    $msCost = $formData['msCost'];
+                    $msSaleComm = $formData['msSaleComm'];
+                    $msGst = (isset($formData['addgstmscost']) == TRUE) ? 1 : 0;
+                    
+                    $ptSession = NULL;
+                    $ptCostPerSession = NULL;
+                    $ptSaleCommPerSession = NULL;
+                    $ptServiceCommPerSession = NULL;
+                    $ptGst = 0;
+            }
+            else 
+            {
+                    $msPeriod = NULL;
+                    $msCost = NULL;
+                    $msSaleComm = NULL;
+                    $msGst = 0;
+                    
+                    $ptSession = $formData['ptSession'];
+                    $ptCostPerSession = $formData['ptCostPerSession'];
+                    $ptSaleCommPerSession = $formData['ptSaleCommPerSession'];
+                    $ptServiceCommPerSession = $formData['ptServiceCommPerSession'];
+                    $ptGst = (isset($formData['addgstptcost']) == TRUE) ? 1 : 0;
+            }
+
+            $tableToUpdate = "contracts";
+			$columnToUpdate = array(
+				'contractName'        => $formData['contractName'],
+				'contractDescription' => $formData['contractDetails'],
+				'contractType'        => $formData['contractType'],
+				'contractNotes'       => $formData['contractNotes'],
+				'membershipPeriod'    => $msPeriod,
+				'membershipcost'      => $msCost,
+				'membershipsalecomm'  => $msSaleComm,
+				'renewalert'          => $formData['msRenewAlert'],
+				'ptsession'           => $ptSession,
+				'ptcostpersession'    => $ptCostPerSession,
+				'ptsalecomm'          => $ptSaleCommPerSession,
+				'ptservicecomm'       => $ptServiceCommPerSession,
+				'isActive'            => $formData['isActive'],
+				'msgst'               => $msGst,
+				'ptgst'               => $ptGst,
+				'createdBy'           => $this->session->userdata('adminId')
+			);
+			$usingCondition = array('contractId' => $contractId);
+
+			$contract_id = $this->segi_model->update_data($columnToUpdate, $tableToUpdate, $usingCondition);
+
+			$table = "contracts";
+			$fieldToFilter = "contractId";
+			$highest_id = $this->segi_model->get_max_val($table, $fieldToFilter);
+
+			if($highest_id < 1)
+                $highest_id = 1;
+            else 
+            {
+                $highest_id = $highest_id + 1;
+            }
+
+            $table = "contractsoutlets";
+            $arrayData = array(
+								'contractId' => $contractId
+							);
+            $this->segi_model->delete_data($table, $where);
+
+			if(isset($formData['outlet']) && !empty($formData['outlet']))
+                {
+                    if(is_array($formData['outlet']))
+                    {
+                        foreach($formData['outlet'] as $value)
+                        {
+                            
+                            $table = "contractsoutlets";
+							$arrayData = array(
+								'contractId' => $contractId,
+								'outletId'   =>  $value
+							);
+							$this->segi_model->insert_data($arrayData,$table);
+                        }
+                    }
+                }
+
+            $messageType = "insert";
+            $this->segi_model->display_message($messageType);
+		}
+	}
+
+	public function delete_contract(){
+
+		$contractId = $this->uri->segment(3);
+		$table = "contracts";
+        $where = array(
+			'contractId' => $contractId
+		);
+        $this->segi_model->delete_data($table, $where);
+
+        $messageType = "delete";
+        $urlToGo = "contracts/list_active_contract";
+        $this->segi_model->display_message($messageType, $urlToGo);
+
+	}
+
 	public function add_contract(){
 
 		$this->load->view('admin/a_contract_add');

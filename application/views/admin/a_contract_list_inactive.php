@@ -8,7 +8,7 @@
 
 <div class="content last">
 	<h3><?php echo $this->lang->line('contract_namePageActiveContract'); ?></h3>
-	
+	<?php $this->load->view('common/data_message');?>
 
 	
 		<table class="rwd-table no-margin" UItable id="UItable">
@@ -28,7 +28,7 @@
 				?>
                                     <tr>
                                             <td data-th="<?php echo $this->lang->line('contract_tableThContractname'); ?>">
-                                                    <a href="index.php?action=viewContract&contractId=<?php echo $row['contractId']; ?>" data-toggle="tooltip" data-placement="right" title="<?php echo $this->lang->line('contract_tableThpageNameviewContract'); ?>">
+                                                    <a href="<?php echo base_url();?>contracts/view_contract/<?php echo $row['contractId']; ?>" data-toggle="tooltip" data-placement="right" title="<?php echo $this->lang->line('contract_tableThpageNameviewContract'); ?>">
                                                             <?php echo $row['contractName']; ?>
                                                     </a>
                                             </td>
@@ -54,10 +54,10 @@
 
 											?></td>
                                             <td data-th="<?php echo $this->lang->line('contract_tableThContractactionsText'); ?>">
-                                                    <a href="index.php?action=viewContract&contractId=<?php echo $row['contractId']; ?>">
+                                                    <a href="<?php echo base_url();?>contracts/view_contract/<?php echo $row['contractId']; ?>">
                                                             <i class="fa fa-edit text-info" data-toggle="tooltip" data-placement="left" title="<?php echo $this->lang->line('global_viewBtn'); ?>"></i>
                                                     </a>
-                                                    <a href="index.php?action=viewContract&acttype&contractId=<?php echo $row['contractId']; ?>">
+                                                    <a href="<?php echo base_url();?>contracts/view_contract/<?php echo $row['contractId']; ?>" onclick="return confirm('<?php echo $this->lang->line("global_alertDelete")?>')">
                                                             <i class="fa fa-trash-o" data-toggle="tooltip" data-placement="left" title="<?php echo $this->lang->line('global_deleteBtn'); ?>"></i>
                                                     </a>
                                             </td>

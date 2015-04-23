@@ -257,16 +257,16 @@ class Segi_model extends CI_Model {
          */
         if($messageType == "insert")
         {
-             $this->session->set_flashdata('insert', 'Data successfully recorded');
+             $this->session->set_flashdata('insert', $this->lang->line('global_msgInsert'));
 
         }
         else if($messageType == "update")
         {
-             $this->session->set_flashdata('update', 'Successfully saved');
+             $this->session->set_flashdata('update', $this->lang->line('global_msgUpdate'));
         }
         else if($messageType == "delete")
         {
-             $this->session->set_flashdata('delete', 'Data Successfully deleted.');
+             $this->session->set_flashdata('delete', $this->lang->line('global_msgDelete'));
         }
         else if($messageType == "error")
         {

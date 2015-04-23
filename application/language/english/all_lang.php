@@ -17,7 +17,17 @@ $lang['global_deleteBtn']         = "Delete";
 $lang['global_viewBtn']           = "View";
 $lang['global_updateBtn']         = "Update";
 $lang['global_selectOption']      = "Select...";
-//selectOption
+$lang['global_active']            = "Active";
+$lang['global_notActive']         = "Inactive";
+$lang['global_alertDelete']       = "Are you to delete this data??";
+$lang['global_msgDelete']         = "Data successfully deleted";
+$lang['global_msgInsert']         = "Data successfully recorded";
+$lang['global_msgUpdate']         = "Successfully saved";
+$lang['global_dateStartText']         = "Date Start";
+$lang['global_salestaffText']         = "Sale Staff";
+$lang['global_servicestaffText']         = "Service Staff";
+
+//$lang['global_']         = "";
 
 
 
@@ -167,6 +177,9 @@ $lang['contract_tableThContractauthor']  = "Author";
 $lang['contract_tableThContractoutlet']  = "Outlet";
 $lang['contract_tableThContractactionsText']  = "Actions";
 $lang['contract_tableThpageNameviewContract']  = "View Contract";
+$lang['contract_contractStatusField']  = "Contract Status";
+$lang['contract_contractNewIntro']  = "The Client can select only either a membership , personal training contract. Please select the Sale staff and/or Serivce staff for the contract and contract start date.";
+
 
 /*$lang['client_'] = "";*/
 
