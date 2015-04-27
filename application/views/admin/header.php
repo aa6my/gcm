@@ -28,6 +28,7 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/datetimepicker.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/chosen.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/clientresponse.css">

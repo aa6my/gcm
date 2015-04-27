@@ -26,6 +26,7 @@ $lang['global_msgUpdate']         = "Successfully saved";
 $lang['global_dateStartText']         = "Date Start";
 $lang['global_salestaffText']         = "Sale Staff";
 $lang['global_servicestaffText']         = "Service Staff";
+$lang['global_cloneBtn']  = "Add another contract";
 
 //$lang['global_']         = "";
 
