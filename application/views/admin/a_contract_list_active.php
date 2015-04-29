@@ -10,7 +10,13 @@
 	<h3><?php echo $this->lang->line('contract_namePageActiveContract'); ?></h3>
 	<?php $this->load->view('common/data_message');?>
 
-	
+	<?php
+    if(empty($contracts)){?>
+        <div class="alertMsg default no-margin">
+            <i class="fa fa-minus-square-o"></i> <?php echo $this->lang->line('contract_noActiveContract'); ?>
+        </div>
+    <?php 
+    }else{?>
 		<table class="rwd-table no-margin" UItable id="UItable">
 			<thead>
                             <tr class="primary">
@@ -65,5 +71,8 @@
 				<?php } ?>
 			</tbody>
 		</table>
+		   <?php 
+    }
+    ?>
 </div>
 <?php $this->load->view('admin/footer');?>

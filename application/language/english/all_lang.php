@@ -27,7 +27,8 @@ $lang['global_dateStartText']         = "Date Start";
 $lang['global_salestaffText']         = "Sale Staff";
 $lang['global_servicestaffText']         = "Service Staff";
 $lang['global_cloneBtn']  = "Add another contract";
-
+$lang['global_lastLoginText']         = "Last Visited";
+$lang['global_archivedText']         = "Archived?";
 //$lang['global_']         = "";
 
 
@@ -123,7 +124,7 @@ $lang['nav_openContNavLink']         = "Manage Contract";
 | Client list,add, view, delete
 |====================================*/
 $lang['client_activeClientsTabLink']             = "Active Clients";
-$lang['client_inactiveClientsTabLink']           = "Inactive Clients";
+$lang['client_inactiveClientsTabLink']           = "Archived/Inactive Clients";
 $lang['client_newClientTabLink']                 = "Add New Client";
 $lang['client_addPageName']                      = "Client Info";
 $lang['client_setAccountActiveField']            = "Set the Account as Active?";
@@ -160,7 +161,15 @@ $lang['client_contractDescField']                = "Contract Description";
 $lang['client_contractDescFieldHelp']            = "Please describe the Contract. This description IS visible to the Client.";
 $lang['client_contractNotesField']               = "Contract Notes";
 $lang['client_contractNotesFieldHelp']           = "Private Notes about the Contract. Notes are NOT visible to the Client.";
-$lang['']           = "";
+$lang['client_namePageActiveClient']             = "Active Clients";
+$lang['client_clientText']                       = "Client";
+$lang['client_companyText']                      = "Company";
+$lang['client_emailText']                        = "Email";
+$lang['client_phoneText']                        = "Phone";
+$lang['client_pageNameviewClient']           = "View Client";
+$lang['client_memberText']           = "Membership No";
+$lang['client_noActiveClients']           = "No Active Clients Found";
+$lang['client_noInActiveClients']           = "No Inactive Clients Found";
 $lang['']           = "";
 $lang['']           = "";
 $lang['']           = "";
@@ -168,18 +177,20 @@ $lang['']           = "";
 /*===================================
 | Contract list,add, view, delete
 |====================================*/
-$lang['contract_activeClientsTabLink']   = "Active Contract";
-$lang['contract_inactiveClientsTabLink'] = "Inactive Contract";
-$lang['contract_newClientTabLink']       = "Add New Contract";
-$lang['contract_namePageActiveContract'] = "Open Contract";
-$lang['contract_tableThContractname']    = "Name";
-$lang['contract_tableThContracttype']    = "Type";
-$lang['contract_tableThContractauthor']  = "Author";
-$lang['contract_tableThContractoutlet']  = "Outlet";
+$lang['contract_activeClientsTabLink']        = "Active Contract";
+$lang['contract_inactiveClientsTabLink']      = "Inactive Contract";
+$lang['contract_newClientTabLink']            = "Add New Contract";
+$lang['contract_namePageActiveContract']      = "Open Contract";
+$lang['contract_tableThContractname']         = "Name";
+$lang['contract_tableThContracttype']         = "Type";
+$lang['contract_tableThContractauthor']       = "Author";
+$lang['contract_tableThContractoutlet']       = "Outlet";
 $lang['contract_tableThContractactionsText']  = "Actions";
-$lang['contract_tableThpageNameviewContract']  = "View Contract";
-$lang['contract_contractStatusField']  = "Contract Status";
-$lang['contract_contractNewIntro']  = "The Client can select only either a membership , personal training contract. Please select the Sale staff and/or Serivce staff for the contract and contract start date.";
+$lang['contract_tableThpageNameviewContract'] = "View Contract";
+$lang['contract_contractStatusField']         = "Contract Status";
+$lang['contract_contractNewIntro']            = "The Client can select only either a membership , personal training contract. Please select the Sale staff and/or Serivce staff for the contract and contract start date.";
+$lang['contract_noActiveContract'] = "No Active Contract Found";
+$lang['contract_noInActiveContract'] = "No Inactive Contract Found";
 
 
 /*$lang['client_'] = "";*/

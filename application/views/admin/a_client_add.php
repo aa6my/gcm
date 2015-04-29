@@ -8,7 +8,7 @@
 
 <div class="content last">
 	<h3><?php echo $this->lang->line('client_addPageName');?></h3>
-	<!-- mesej box sini -->
+	<?php $this->load->view('common/data_message');?>
 
 	<form action="" method="post">
 		<div class="row">
@@ -70,7 +70,7 @@
                                             <div class="col-md-6">                                       
                                                 <div class="form-group">
                                                     <label for="newContractSel"><?php echo $this->lang->line('client_contractNameField'); ?></label>
-                                                    <select class="form-control newContractSel" name="newContractSel" id="newContractSel" data-myUrl="<?php echo base_url();?>clients/ajax_populate_dropdown">
+                                                    <select class="form-control newContractSel" name="newContractSel[]" id="newContractSel" data-myUrl="<?php echo base_url();?>clients/ajax_populate_dropdown">
                                                         <option value=""><?php echo $this->lang->line('global_selectOption'); ?></option>
                                                         <?php foreach($contracts as $key => $row) { ?>
                                                         <option value="<?php echo $row['contractId'];?>"><?php echo $row['contractName']; ?></option>
@@ -81,20 +81,20 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="newcontractstartdate"><?php echo $this->lang->line('global_dateStartText'); ?></label>
-                                                    <input type="text" class="form-control" placeholder="YYYY-MM-dd" name="newcontractstartdate" id="newcontractstartdate" value="" />
+                                                    <input type="text" class="form-control" placeholder="YYYY-MM-dd" name="newcontractstartdate[]" id="newcontractstartdate" value="" />
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row myDestination">
                                             <div class="col-md-6" >
                                                 <label for="saletaff"><?php echo $this->lang->line('global_salestaffText'); ?></label>
-                                                <select class="form-control" name="saletaff" id="saletaff" disabled="disabled">
+                                                <select class="form-control" name="saletaff[]" id="saletaff" disabled="disabled">
                                                     <option value=""><?php echo $this->lang->line('global_selectOption'); ?></option>
                                                 </select>
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="svcstaff"><?php echo $this->lang->line('global_servicestaffText'); ?></label>
-                                                <select class="form-control" name="svcstaff" id="svcstaff" disabled="disabled">
+                                                <select class="form-control" name="svcstaff[]" id="svcstaff" disabled="disabled">
                                                     <option value=""><?php echo $this->lang->line('global_selectOption'); ?></option>
                                                 </select>
                                             </div>
@@ -103,7 +103,7 @@
                                     </div>
                                     </div>
                                     
-        <button type="button" name="submit" value="addContract" class="btn btn-warning btn-icon mt20" id="cloneButton"><i class="fa fa-check-square-o"></i> <?php echo $this->lang->line('global_cloneBtn');?></button>
+        <button type="button" name="clone" class="btn btn-warning btn-icon mt20" id="cloneButton"><i class="fa fa-check-square-o"></i> <?php echo $this->lang->line('global_cloneBtn');?></button>
 		<button type="input" name="submit" value="addContract" class="btn btn-success btn-icon mt20"><i class="fa fa-check-square-o"></i> <?php echo $this->lang->line('global_saveBtn');?></button>
 	</form>
 </div>

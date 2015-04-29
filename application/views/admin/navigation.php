@@ -43,7 +43,7 @@ $dataAdmin = $this->segi_model->get_specified_row($table, $where);
                                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $this->lang->line('nav_clientsNavLink');?></a>
                                                     <ul class="dropdown-menu">
                                                         
-                                                        <li><a href="<?php echo base_url();?>clients/list_client"><?php echo $this->lang->line('nav_activeClientsNavLink');?></a></li>
+                                                        <li><a href="<?php echo base_url();?>clients/list_active_client"><?php echo $this->lang->line('nav_activeClientsNavLink');?></a></li>
                                                        
                                                         <li><a href="index.php?action=emailClients"><?php echo $this->lang->line('nav_emailClientsNavLink');?></a></li>
                                                        
