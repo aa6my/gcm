@@ -33,6 +33,7 @@ class Clients extends CI_Controller {
 
 		$table = "contracts";
 		$data['contracts'] = $this->segi_model->get_all_rows($table);
+		$data['payments'] = $this->segi_model->get_all_rows("payment_method");
 		$this->load->view('admin/a_client_add', $data);
 
 		if($this->input->post('submit')){
@@ -87,13 +88,28 @@ class Clients extends CI_Controller {
             	);
 
 				$this->segi_model->insert_data($arrayData,$table);
-                
 			}
 
-			$this->segi_model->display_message("insert");
+			$myData = $this->input->post();
+			for ($i = 0; $i < count($myData['payment_method_id']); $i++) { 
+					
+                	$table = "contract_payments";
+            		$arrayData = array(
+									'clientId'                => $client_id,
+									'payment_method_id'       => $myData['payment_method_id'][$i],
+									'contract_payment_amount' => $myData['contract_payment_amount'][$i],                                
+									'contract_payment_name'   => $myData['contract_payment_name'][$i],
+									'contract_payment_date'   => $myData['contract_payment_date'][$i],
+									'contract_payment_term'   => $myData['contract_payment_term'][$i]
+            		);
 
+            		$this->segi_model->insert_data($arrayData,$table);
+			}
+
+			$this->segi_model->display_message("insert");	
+                
 		}
-		
+
 	}
 
 	public function ajax_populate_dropdown(){

@@ -26,9 +26,10 @@ $lang['global_msgUpdate']         = "Successfully saved";
 $lang['global_dateStartText']         = "Date Start";
 $lang['global_salestaffText']         = "Sale Staff";
 $lang['global_servicestaffText']         = "Service Staff";
-$lang['global_cloneBtn']  = "Add another contract";
+$lang['global_cloneBtn']  		= "Add another copy";
 $lang['global_lastLoginText']         = "Last Visited";
 $lang['global_archivedText']         = "Archived?";
+//$lang['global_cloneBtn']  		= "Add another contract";
 //$lang['global_']         = "";
 
 
@@ -170,8 +171,8 @@ $lang['client_pageNameviewClient']           = "View Client";
 $lang['client_memberText']           = "Membership No";
 $lang['client_noActiveClients']           = "No Active Clients Found";
 $lang['client_noInActiveClients']           = "No Inactive Clients Found";
-$lang['']           = "";
-$lang['']           = "";
+$lang['client_addPageNamePayment']           = "Add Payment";
+$lang['client_paymentIntro']           = "Payment details";
 $lang['']           = "";
 
 /*===================================

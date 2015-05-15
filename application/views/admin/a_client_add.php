@@ -104,9 +104,78 @@
                                     </div>
                                     
         <button type="button" name="clone" class="btn btn-warning btn-icon mt20" id="cloneButton"><i class="fa fa-check-square-o"></i> <?php echo $this->lang->line('global_cloneBtn');?></button>
+
+<br/>
+<br/>
+
+                                    <h3><?php echo $this->lang->line('client_addPageNamePayment');?></h3>
+                
+                                    <p><?php echo $this->lang->line('client_paymentIntro'); ?></p>
+                                     <hr/>                                     
+                                      <div class="myContent">
+                                        <div class="row">                                        
+                                            <div class="col-md-6">                                       
+                                                <div class="form-group">
+                                                    <label for="newContractSel">Payment Method</label>
+                                                    <select class="form-control" name="payment_method_id[]">
+                                                        <option value="">Please Choose</option>
+                                                        <?php foreach($payments as $key => $row) { ?>
+                                                        <option value="<?php echo $row['payment_method_id'];?>"><?php echo $row['payment_method_type']; ?></option>
+                                                        <?php }?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="newcontractstartdate">Payment Date</label>
+                                                    <input type="text" class="form-control" placeholder="YYYY-MM-dd" name="contract_payment_date[]" id="contract_payment_date" value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-2" >
+                                                <label for="saletaff">Amount</label>
+                                                <input type="text" class="form-control" name="contract_payment_amount[]" id="contract_payment_amount" value="" />
+                                                
+                                            </div>
+                                            <div class="col-md-5">
+                                                <label for="svcstaff">Payment Term</label>
+                                                <select class="form-control" name="contract_payment_term[]" id="contract_payment_term">
+                                                    <option value="">Please Select</option>
+                                                    <option value="monthly">Monthly</option>
+                                                    <option value="quarter">Quarter</option>
+                                                    <option value="yearly">Yearly</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <label for="saletaff">Amount</label>
+                                                <input type="text" class="form-control" name="contract_payment_name[]" id="contract_payment_name" value="" placeholder="Payment Name"/>
+                                            </div>
+                                        </div>
+                                    <hr/>
+                                    <br/>
+                                    </div>
+                                    
+                                    <button type="button" name="clone" class="btn btn-warning btn-icon mt20" id="cloneBtn"><i class="fa fa-check-square-o"></i> <?php echo $this->lang->line('global_cloneBtn');?></button>
+
+
+
+
+
+
 		<button type="input" name="submit" value="addContract" class="btn btn-success btn-icon mt20"><i class="fa fa-check-square-o"></i> <?php echo $this->lang->line('global_saveBtn');?></button>
 	</form>
 </div>
 
 <?php $this->load->view('admin/footer');?>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/contracts/viewClientv2.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.metalClone.min.js"></script>
+<script>
+$(function(){
+    $('.myContent').metalClone(
+    {
+        position    : 'after',
+        btnClone   : '#cloneBtn'
+    });
+});
+</script>
